@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dead_stock_report_form" model="ir.ui.view">
+            <field name="name">view.dead.stock.report</field>
+            <field name="model">dead.stock.report</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <form string="Dead Stock Report">
+                    <sheet>
+                    <group >
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <!-- <field name="summary" widget="radio"/> -->
+                        </group>
+                    </group>
+                    </sheet>
+                    <footer>
+                        <button string="Generate" name="action_do_report" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                   </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="dead_stock_report_action" model="ir.actions.act_window">
+            <field name="name">Dead Stock Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dead.stock.report</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="view_id" eval="False"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            action="dead_stock_report_action"
+            id="dead_stock_report_menu"
+            parent="stock.menu_warehouse_report" sequence="200"/>
+        
+    </data>
+</odoo>

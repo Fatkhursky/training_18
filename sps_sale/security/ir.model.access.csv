@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_credit_limit_user,access.credit.limit.user,model_credit_limit,base.group_user,1,1,1,1
+access_wizard_message_user,wizard.message user,model_wizard_message,base.group_user,1,1,1,1

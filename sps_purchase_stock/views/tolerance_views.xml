@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+    <!-- Tree View -->
+        <record id="view_res_tolerance_tree" model="ir.ui.view">
+            <field name="name">res.tolerance.tree</field>
+            <field name="model">res.tolerance</field>
+            <field name="arch" type="xml">
+                <list string="Tolerance List">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="tolerance_limit"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_res_tolerance_form" model="ir.ui.view">
+            <field name="name">res.tolerance.form</field>
+            <field name="model">res.tolerance</field>
+            <field name="arch" type="xml">
+                <form string="Tolerance Form">
+                    <sheet>
+                        <group>
+                            <group>
+                              <field name="name"/>
+                              <field name="partner_id"/>
+                              <field name="tolerance_limit" widget="percentage" style="width:10%%"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
